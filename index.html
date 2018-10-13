@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transititonal//EN"
+""http://www.w3.org/TR/XHTML1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <title>U.S. Reports URL Generator</title>
+</head>
+<body>
+
+<form name="USREPORTSURL">
+<table border="1" width="600" height="200" cellpadding="10" cellspacing="3">
+<tr><th colspan="2"><h1>Generate U.S. Reports URL <br> For Supreme Court Cases</h1></th></tr>
+<tr><th colspan="2">Please enter the volume and page numbers to generate the URL.</th></tr>
+
+<tr>
+<th colspan="2">
+    <input type="number" name="VOLUME" id="volume" value="389" onchange="calculate();"/>
+     U.S.
+    <input type="number" name="PAGE" id="page" value="347" onchange="calculate();"/></th>
+
+</tr>
+<tr>
+    <th colspan="2">URL: <input type="text" name="URL" id="url" size="65"></th>
+</tr>
+
+<table>
+</form>
+
+<script type="text/javascript">
+function calculate() {
+    var VOLUME = document.USREPORTSURL.VOLUME.value;
+    var PAGE = document.USREPORTSURL.PAGE.value;
+    var URL = "https://cdn.loc.gov/service/ll/usrep/usrep"
+        + VOLUME + "/usrep" + VOLUME + PAGE
+        + "/usrep"+ VOLUME + PAGE +".pdf";
+    document.USREPORTSURL.URL.value = URL;
+
+}
+
+calculate();
+
+</script>
+</body>
+</html>
